@@ -164,8 +164,8 @@ html, body {
 }
 
 #aboutbox {
-  height: 80%;
-  width: 60%;
+  height: 50%;
+  width: 50%;
 
   position: relative;
   background-color: white;
@@ -174,7 +174,11 @@ html, body {
   letter-spacing: 2px;
   text-align: center;
 
-  border-style: solid;
+  border: solid 1px;
+  box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
+      -moz-box-shadow: 0 0 10px  5px rgba(0,0,0,0.6);
+      -webkit-box-shadow: 0 0 10px 5px rgba(0,0,0,0.6);
+      -o-box-shadow: 0 0 10px 5px rgba(0,0,0,0.6);
 }
 
 /* Media queries */
@@ -265,7 +269,11 @@ html, body {
   font-family: 'Poiret One', cursive;
   letter-spacing: 2px;
 
-  border-style: solid;
+  border: solid 1px;
+  box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
+      -moz-box-shadow: 0 0 10px  5px rgba(0,0,0,0.6);
+      -webkit-box-shadow: 0 0 10px 5px rgba(0,0,0,0.6);
+      -o-box-shadow: 0 0 10px 5px rgba(0,0,0,0.6);
   display: block;
   overflow: scroll;
 }
