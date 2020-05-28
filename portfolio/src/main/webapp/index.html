@@ -1,18 +1,90 @@
 <!DOCTYPE html>
 <html>
+  <script src="highlightscript.js"></script>
+  <script src="tabscript.js"></script>
   <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <title>Anthony's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Poiret+One|Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+    <div id="wrapper">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+      <div id="infobox">
+        <header id="header">
+          <h1>Anthony Odum Portfolio</h1>
+          <p>Computer Science &nbsp;&bull;&nbsp; Life is only as good as your mindset</p>
+
+          <nav>
+              <ul>
+                <li><a id="about" onmouseover="highlightAbout()" onmouseleave="unhighlightAbout()" onclick="transitionAbout()"  href="#abouttab"><i class="fa fa-address-card"></i></a></li>
+                <li><a id="projects" onmouseover="highlightProjects()" onmouseleave="unhighlightProjects()" onclick="transitionProjects()" href="#projectstab"><i class="fa fa-file-code-o"></i></a></li>
+                <li><a id="resume" onmouseover="highlightResume()" onmouseleave="unhighlightResume()" href="https://resume.creddle.io/resume/36vq3ojyy8w" target="_blank"><i class="fa fa-file-text"></i></a></li>
+                <li><a id="github" onmouseover="highlightGithub()" onmouseleave="unhighlightGithub()" href="https://github.com/AnthonyOdum" target="_blank"><i class="fa fa-github"></i></a></li>
+                <li><a id="linkedin" onmouseover="highlightLinkedIn()" onmouseleave="unhighlightLinkedIn()" href="https://www.linkedin.com/in/anthony-odum-bb1b46145" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+          </nav>
+
+            <div id="bubblelabel">
+              <h3><span id="aboutlabel">About</span>&nbsp;&bull;&nbsp;</h3>
+              <h3><span id="projectslabel">Projects</span>&nbsp;&bull;&nbsp;</h3>
+              <h3><span id="resumelabel">Resume</span>&nbsp;&bull;&nbsp;</h3>
+              <h3><span id="githublabel">Github</span>&nbsp;&bull;&nbsp;</h3>
+              <h3><span id="linkedinlabel">Linked In</span></h3>
+            </div>
+        </header>
+      </div>
+
+      <div id="abouttab">
+        <div id="aboutbox">
+          <div onclick="transitionAboutToOriginal()" id="exit"><i class="fa fa-window-close"></i></div>
+          <h2>Hi, My name is Anthony and this is my portfolio site.</h2>
+          <h3>While currently focusing in Java, I also have experience in Javascript, TypeScript, HTML and CSS. Links to my projects, Resume, Github and LinkedIn can all be found here. </h3>
+          <div id="illustration"><img src="images/about.gif" alt="smile"></div>
+          <p id="aboutfooter">Thank you for taking the time to view my site, whatever the reason, and I look forward to hearing from you. Have a nice day!</p>
+        </div>
+      </div>
+
+      <div id="projectstab">
+          <div id="projectsbox">
+            <div onclick="transitionProjectsToOriginal()" id="exit"><i class="fa fa-window-close"></i></div>
+            <div id="spacing"></div>
+            <div class="workbox">
+              <div class="workimage"><img src="images/SudokuPhoto.png" alt=""></div>
+              <div class="workwords">
+                <h2>Sudoku Generator</h2>
+                <p>This program generates a solvable 9x9 Sudoku board. The user is allowed 5 mistakes to try and solve the board.</p>
+              </div>
+            </div>
+            <div class="workbox">
+              <div class="workimage"><img src="images/Website.png" alt=""></div>
+              <div class="workwords">
+                <h2>Portfolio Website</h2>
+                <p>The website you are currently on!</p>
+              </div>
+            </div>
+            <div class="workbox">
+              <div class="workimage"><img src="images/google.png" alt=""></div>
+              <div class="workwords">
+                  <h2>AMP Performance Visualizer</h2>
+                  <p>An API that downloads and caches AMP webpages, retrieves performance metrics from them and returns them in multiple graphs for the user! I worked on this during my first internship at Google.</p>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </body>
 </html>
