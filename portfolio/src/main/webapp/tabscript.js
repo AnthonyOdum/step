@@ -35,11 +35,11 @@ function transitionProjects() {
 }
 
 function transitionProjectsToOriginal() {
-document.getElementById("projectstab").style.display = "none";
-let elements = document.getElementsByClassName("circles").item(0).querySelectorAll("li");
-for(let element of elements)  {
-  element.style.zIndex = "initial";
-}
+    document.getElementById("projectstab").style.display = "none";
+    let elements = document.getElementsByClassName("circles").item(0).querySelectorAll("li");
+    for(let element of elements)  {
+    element.style.zIndex = "initial";
+    }
 
-window.location = "index.html";
+    window.location = "index.html";
 }
