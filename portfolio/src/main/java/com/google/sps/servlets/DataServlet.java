@@ -59,6 +59,6 @@ public class DataServlet extends HttpServlet {
     comments.add(text);
 
     // Redirect back to the HTML page.
-    //response.sendRedirect("/index.html");
+    response.sendRedirect("/index.html");
 	}
 }

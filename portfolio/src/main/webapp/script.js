@@ -42,7 +42,7 @@ function getComments() {
 }
 
 function createTableElement(text) {
-  const tdElement = document.createElement('td');
+  const tdElement = document.createElement('tr');
   tdElement.innerText = text;
   return tdElement;
 }
