@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <script src="highlightscript.js"></script>
+  <script src="script.js"></script>
   <script src="tabscript.js"></script>
   <head>
     <title>Anthony's Portfolio</title>
@@ -8,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Poiret+One|Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
+  <body onload="getComments()">
     <div id="wrapper">
         <ul class="circles">
             <li></li>
@@ -45,6 +46,18 @@
               <h3><span id="githublabel">Github</span>&nbsp;&bull;&nbsp;</h3>
               <h3><span id="linkedinlabel">Linked In</span></h3>
             </div>
+            <form action="/data" method="POST">
+							<p>Comment:<p>
+							<textarea name="text-area"></textarea>
+							<input type="submit" />
+							<br></br>
+            </form>
+            <table>
+                <tr>
+                  <th>Comments</th>
+                </tr>
+                <tr id="comments"></tr>
+							</table>
         </header>
       </div>
 

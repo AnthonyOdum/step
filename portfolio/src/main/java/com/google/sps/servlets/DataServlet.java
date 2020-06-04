@@ -15,6 +15,8 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
+import com.google.gson.Gson;
+import java.util.ArrayList;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,9 +26,39 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
+  ArrayList<String> comments = new ArrayList<String>();
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello Anthony!</h1>");
+	  response.setContentType("application/json");
+    String json = new Gson().toJson(comments);
+    System.out.println(json + "json request");
+    response.getWriter().println(json);
   }
+
+	private String convertToJson(ArrayList list) {
+		String json = "{";
+    json += "\"revolutionary\": ";
+    json += "\"" + list.get(0) + "\"";
+    json += ", ";
+    json += "\"cause\": ";
+    json += "\"" + list.get(1) + "\"";
+    json += ", ";
+    json += "\"sentiment\": ";
+    json += "\"" + list.get(2) + "\"";
+    json += "}"; 
+		return json;
+	}
+
+  
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String text = request.getParameter("text-area");
+
+    System.out.println(text);
+    comments.add(text);
+
+    // Redirect back to the HTML page.
+    //response.sendRedirect("/index.html");
+	}
 }
