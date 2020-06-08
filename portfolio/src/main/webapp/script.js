@@ -9,36 +9,29 @@ function getRandomQuote() {
         })
 }
 
-function getMessages() {
-    console.log('Fetching messages');
+function numberOfComments() {
+  let numComs = document.getElementById("num-comments").value;
+  console.log(numComs);
+  const commentSection = document.getElementById('comments');
 
-   fetch('/data')
-			.then(response => response.json())
-			.then((messages) => {
+  while (commentSection.firstChild) {
+        commentSection.removeChild(commentSection.firstChild);
+    }
 
-				const fetchTest = document.getElementById('quote-container');
-				fetchTest.innerHTML = '';
-				const heading = document.createElement('h3')
-        heading.innerText = 'Name: ';
-				const info = document.createElement('p')
-        info.innerText = messages.revolutionary;
-				fetchTest.appendChild(heading);
-				fetchTest.appendChild(info);
-		});
-}
-
-function getComments() {
-  console.log("check")
-  fetch('/data')
+  fetch('/data?numComs=' + numComs)
     .then(response => response.json())
     .then((section) => {
-        const commentSection = document.getElementById('comments');
-        console.log(section);
-        section.forEach((line) => {
-          console.log(line);
-          commentSection.appendChild(createTableElement(line));
-        });
-    });
+      
+      console.log(section);
+      section.forEach((line) => {
+        commentSection.appendChild(createTableElement(line));
+      })
+    })
+}
+
+function deleteComments() {
+  fetch('/delete-data', {method: 'POST'})
+  .then(response => numberOfComments())
 }
 
 function createTableElement(text) {
