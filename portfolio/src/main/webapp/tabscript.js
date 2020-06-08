@@ -43,3 +43,4 @@ function transitionProjectsToOriginal() {
 
     window.location = "index.html";
 }
+
