@@ -96,30 +96,3 @@ public class DataServlet extends HttpServlet {
 
     return value;
   }
-  
-  
-  private int getCommentsNumber(HttpServletRequest request) {
-    String commentsShownString = request.getParameter("num-comments");
-    System.out.println("String " + commentsShownString);
-
-    int commentsShown = Integer.parseInt(commentsShownString);
-    System.out.println("int " + commentsShown);
-
-    return commentsShown;
-  }
-
-  //Hardcoded JSON
-  private String convertToJson(ArrayList list) {
-		String json = "{";
-    json += "\"revolutionary\": ";
-    json += "\"" + list.get(0) + "\"";
-    json += ", ";
-    json += "\"cause\": ";
-    json += "\"" + list.get(1) + "\"";
-    json += ", ";
-    json += "\"sentiment\": ";
-    json += "\"" + list.get(2) + "\"";
-    json += "}"; 
-		return json;
-	}
-}
