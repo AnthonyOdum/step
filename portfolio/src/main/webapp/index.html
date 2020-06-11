@@ -1,108 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <script src="highlightscript.js"></script>
-  <script src="script.js"></script>
-  <script src="tabscript.js"></script>
   <head>
-    <title>Anthony's Portfolio</title>
+    <!--Meta Tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="main.css">
+
+    <!--Font Links-->
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Poiret+One|Permanent+Marker&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+
+    <title>Anthony's Portfolio</title>
   </head>
-  <body onload="numberOfComments()">
-    <div id="wrapper">
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-
-      <div id="infobox">
-        <header id="header">
-          <h1>Anthony Odum Portfolio</h1>
-          <p>Computer Science &nbsp;&bull;&nbsp; Life is only as good as your mindset</p>
-
-          <nav>
-              <ul>
-                <li><a id="about" onmouseover="highlightAbout()" onmouseleave="unhighlightAbout()" onclick="transitionAbout()"  href="#abouttab"><i class="fa fa-address-card"></i></a></li>
-                <li><a id="projects" onmouseover="highlightProjects()" onmouseleave="unhighlightProjects()" onclick="transitionProjects()" href="#projectstab"><i class="fa fa-file-code-o"></i></a></li>
-                <li><a id="resume" onmouseover="highlightResume()" onmouseleave="unhighlightResume()" href="https://resume.creddle.io/resume/36vq3ojyy8w" target="_blank"><i class="fa fa-file-text"></i></a></li>
-                <li><a id="github" onmouseover="highlightGithub()" onmouseleave="unhighlightGithub()" href="https://github.com/AnthonyOdum" target="_blank"><i class="fa fa-github"></i></a></li>
-                <li><a id="linkedin" onmouseover="highlightLinkedIn()" onmouseleave="unhighlightLinkedIn()" href="https://www.linkedin.com/in/anthony-odum-bb1b46145" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-              </ul>
-          </nav>
-
-            <div id="bubblelabel">
-              <h3><span id="aboutlabel">About</span>&nbsp;&bull;&nbsp;</h3>
-              <h3><span id="projectslabel">Projects</span>&nbsp;&bull;&nbsp;</h3>
-              <h3><span id="resumelabel">Resume</span>&nbsp;&bull;&nbsp;</h3>
-              <h3><span id="githublabel">Github</span>&nbsp;&bull;&nbsp;</h3>
-              <h3><span id="linkedinlabel">Linked In</span></h3>
-            </div>
-            <form action="/data" method="POST">
-							<p>Comment:<p>
-							<textarea name="text-area"></textarea>
-							<input type="submit" />
-							<br></br>
-            </form>
-            <label for="num-comments">Number of comments to display:</label>
-            <select name="num-comments" id="num-comments">
-              <option value="1">1</option>
-              <option value="3">3</option>
-              <option value="5">5</option>
-            </select>
-            <input type="submit" onClick="numberOfComments()"/>
-            <button onClick="deleteComments()">Delete Comments</button>
-            <label for="comments">Comments:</label>
-            <table name="comments" id="comments">
-						</table>
-        </header>
+  <body>
+    <div id="titlePage">
+      <div id="header">
+        <h3 style="font-size:5vw;">Welcome to</h3>
+        <h1 class="heading">Anthony Odum's Portfolio</h1>
       </div>
-
-      <div id="abouttab">
-        <div id="aboutbox">
-          <div onclick="transitionAboutToOriginal()" id="exit"><i class="fa fa-window-close"></i></div>
-          <h2>Hi, My name is Anthony and this is my portfolio site.</h2>
-          <h3>While currently focusing in Java, I also have experience in Javascript, TypeScript, HTML and CSS. Links to my projects, Resume, Github and LinkedIn can all be found here. </h3>
-          <div id="illustration"><img src="images/about.gif" alt="smile"></div>
-          <p id="aboutfooter">Thank you for taking the time to view my site and I look forward to hearing from you. Have a nice day!</p>
-        </div>
+      <div id="enter">
+        <button id="enterButton" onclick="removeCover()"><i class="fas fa-door-open"></i></button>
       </div>
-
-      <div id="projectstab">
-          <div id="projectsbox">
-            <div onclick="transitionProjectsToOriginal()" id="exit"><i class="fa fa-window-close"></i></div>
-            <div id="spacing"></div>
-            <div class="workbox">
-              <div class="workimage"><img src="images/SudokuPhoto.png" alt=""></div>
-              <div class="workwords">
-                <h2>Sudoku Generator</h2>
-                <p>This program generates a solvable 9x9 Sudoku board. The user is allowed 5 mistakes to try and solve the board.</p>
-              </div>
-            </div>
-            <div class="workbox">
-              <div class="workimage"><img src="images/Website.png" alt=""></div>
-              <div class="workwords">
-                <h2>Portfolio Website</h2>
-                <p>The website you are currently on!</p>
-              </div>
-            </div>
-            <div class="workbox">
-              <div class="workimage"><img src="images/google.png" alt=""></div>
-              <div class="workwords">
-                  <h2>AMP Performance Visualizer</h2>
-                  <p>An API that downloads and caches AMP webpages, retrieves performance metrics from them and returns them in multiple graphs for the user! I worked on this during my first internship at Google.</p>
-              </div>
-            </div>
-          </div>
-        </div>
     </div>
+    <div id="menu" class="container-fluid">
+      <div id="aboutBG"></div>
+      <div id="projectsBG"></div>
+      <div class="row menuBlock no-gutters">
+        <div id="aboutCover" class="col">
+          <h1 class="menuHeading">About</h1>
+        </div>
+        <div id="projectsCover" class="col">
+          <h1 class="menuHeading">Projects</h1>
+        </div>
+      </div>
+      <div class="row menuBlock no-gutters">
+        <div id="contactBG"></div>
+        <div id="contactCover" class="col">
+          <h1 class="menuHeading">Contacts</h1>
+        </div>
+      </div>
+    </div>
+
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+
   </body>
 </html>
