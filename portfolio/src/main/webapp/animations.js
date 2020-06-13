@@ -20,9 +20,14 @@ function openAbout() {
   ], 1000);
   page.style.height = '100%';
   page.style.width = '100%';
+  setTimeout(function() {
+    document.getElementById('info').style.display = 'block';
+  }, 1001);
+  
 }
 
 function closeAbout() {
+  document.getElementById('info').style.display = 'none';
   let page = document.getElementById('aboutBG');
   page.animate([
     {width: '100%', height: '100%'},
@@ -44,9 +49,13 @@ function openProjects() {
   ], 1000);
   page.style.height = '100%';
   page.style.width = '100%';
+  setTimeout(function() {
+    document.getElementById('projects').style.display = 'block';
+  }, 1001);
 }
 
 function closeProjects() {
+  document.getElementById('projects').style.display = 'none';
   let page = document.getElementById('projectsBG');
   page.animate([
     {width: '100%', height: '100%'},

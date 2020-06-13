@@ -10,12 +10,14 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 
     <!--Font Links-->
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Poiret+One|Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Poiret+One|Bangers|Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
 
     <title>Anthony's Portfolio</title>
   </head>
-  <body>
+  <body onload="printQuotes()">
+
+    <!--Title Page-->
     <div id="titlePage">
       <div id="header">
         <h3 style="font-size:5vw;">Welcome to</h3>
@@ -25,23 +27,139 @@
         <button id="enterButton" onclick="removeCover()"><i class="fas fa-door-open"></i></button>
       </div>
     </div>
+
     <div id="menu" class="container-fluid">
-      <div id="aboutBG"></div>
-      <div id="projectsBG"></div>
-      <div class="row menuBlock no-gutters">
-        <div id="aboutCover" class="col">
-          <h1 class="menuHeading">About</h1>
-        </div>
-        <div id="projectsCover" class="col">
-          <h1 class="menuHeading">Projects</h1>
+      <!--About Page-->
+      <div id="aboutBG">
+        <div id="info" class="container-fluid">
+
+          <!--Welcome Row 1-->
+          <div class="row">
+            <div class="col-7">
+              <h1 id="welcome">Welcome <span class="wave">👋🏾</span></h1>
+              <p style="font-size: 2vw; padding: 10px; text-align: center;">I'm Anthony, a Computer Science major with a focus on cyber-security at Hampton University. Check out my projects and don't hesistate to get in touch!</p>
+              <h3 class="subHeadings">Skills</h3>
+              <ul class="horiList">
+                <li class="spaceBtwn">Java</li>
+                <li class="spaceBtwn">HTML</li>
+                <li class="spaceBtwn">CSS</li>
+                <li class="spaceBtwn">JavaScript</li>
+                <li class="spaceBtwn">TypeScript</li>
+              </ul> 
+              <h3 class="subHeadings">Experience</h3>
+              <ul class="horiList">
+                <li>Node.js</h1>
+              </ul>
+            </div>
+            <div class="col-5">
+              <img src="images/Security Photo.jpg" alt="Picture of me" style="border-radius: 100%; margin: 10px; max-width: 100%; max-height: 100%;">
+            </div>
+          </div>
+          <!--End of Welcome Row 1-->
+
+          <!--Divider-->
+          <div class="divider"></div>
+
+          <!--Quote Row-->
+          <div class="row">
+            <div class="col">
+              <div class="card h-200">
+                <div class="card-header">
+                  Some of my favorite quotes
+                </div>
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p id="quote">
+                    </p>
+                    <footer class="blockquote-footer" id="name">
+                    </footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--End of Quote Row-->
         </div>
       </div>
+      <!--End of About Page-->
+
+      <!--Projects Page-->
+      <div id="projectsBG">
+        <div id="projects" class="container-fluid">
+          <!--The Project Modal-->
+          <div id="modal">
+
+            <!--Project Card's-->
+            <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+
+            <!--End of Project Card's-->
+              
+            <div class="row h-100 align-items-center row-cols-1 row-cols-md-3">
+
+              <!--First Project-->
+              <div class="col">
+                
+              </div>
+
+              <!--Second Project-->
+              <div class="col">
+                
+              </div>
+
+              <!--Third Project-->
+              <div class="col">
+                
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End of Projects Page-->
+
+      <!--First row Menu Block-->
+      <div class="row menuBlock no-gutters">
+        <div id="aboutCover" class="col cover">
+          <h1>About</h1>
+        </div>
+        <div id="projectsCover" class="col cover">
+          <h1>Projects</h1>
+        </div>
+      </div>
+
+      <!--Second row Menu Block-->
       <div class="row menuBlock no-gutters">
         <div id="contactBG"></div>
-        <div id="contactCover" class="col">
-          <h1 class="menuHeading">Contacts</h1>
+        <div id="contactCover" class="col cover">
+          <h1>Contacts</h1>
         </div>
       </div>
+
     </div>
 
     <!--JS-->
