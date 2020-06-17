@@ -37,9 +37,6 @@ function closeAbout() {
   page.style.width = '0%';
 }
 
-document.getElementById('aboutCover').addEventListener("click", openAbout, false);
-document.getElementById('aboutBG').addEventListener("click", closeAbout, false);
-
 //Projects Page
 function openProjects() {
   let page = document.getElementById('projectsBG');
@@ -65,8 +62,8 @@ function closeProjects() {
   page.style.width = '0%';
 }
 
-document.getElementById('projectsCover').addEventListener("click", openProjects, false);
-document.getElementById('projectsBG').addEventListener("click", closeProjects, false);
+// document.getElementById('projectsCover').addEventListener("click", openProjects, false);
+// document.getElementById('projectsBG').addEventListener("click", closeProjects, false);
 
 //Contact Page
 function openContact() {
@@ -76,9 +73,13 @@ function openContact() {
     {height: '100%'}
   ], 1000);
   page.style.height = '100%';
+  setTimeout(function() {
+    document.getElementById('contact').style.display = 'block';
+  }, 1001);
 }
 
 function closeContact() {
+  document.getElementById('contact').style.display = 'none';
   let page = document.getElementById('contactBG');
   page.animate([
     {height: '100%'},
@@ -87,7 +88,32 @@ function closeContact() {
   page.style.height = '0%';
 }
 
-document.getElementById('contactCover').addEventListener("click", openContact, false);
-document.getElementById('contactBG').addEventListener("click", closeContact, false);
+//Modal Animation
+let modal = document.getElementById('modal');
+
+let projectArr = [
+  'sudoku',
+  'website',
+  'google'
+]
+
+function openModal(choice) {
+  console.log('check');
+
+  console.log(projectArr[choice]);
+
+  let card = document.getElementById(projectArr[choice]);
+  
+  modal.style.display = 'block';
+  card.style.display = 'block';
+}
+
+function closeModal() {
+  modal.style.display = 'none';
+
+  projectArr.forEach(element => {
+    document.getElementById(element).style.display = 'none';
+  })
+}
 
 //End of Animations

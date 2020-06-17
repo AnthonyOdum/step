@@ -82,7 +82,7 @@ public class DataServlet extends HttpServlet {
     }
 
     // Redirect back to the HTML page.
-    response.sendRedirect("/index.html");
+    // response.sendRedirect("/index.html");
 	}
 
   private String getParameter(HttpServletRequest request, String name, String defaultValue) {

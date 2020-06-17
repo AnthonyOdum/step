@@ -68,3 +68,15 @@ function createTableElement(text) {
   tdElement.innerText = text;
   return tdElement;
 }
+
+function submitComment() {
+  $.ajax({
+    url:'/data',
+    async: false,
+    type:'POST',
+    data:$('#comment-form').serialize()
+  });
+  doGet();
+  $('#comment-form')[0].reset();
+  return false;
+}
